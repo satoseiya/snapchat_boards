@@ -10,8 +10,17 @@
   <header>
   	<%= link_to "SnapChat掲示板", root_path, id: "logo" %>
   </header>
-
-<%= yield %>
-
+  <div class="container">
+    <%= yield %>
+    <footer class="footer">
+      <nav>
+        <ul>
+          <li><%= link_to "使い方", help_path %></li>
+          <li><%= link_to "運営者", company_path %></li>
+          <li><%= link_to "利用規約", kiyaku_path %></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
 </body>
 </html>
