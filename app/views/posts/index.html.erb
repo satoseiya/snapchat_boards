@@ -1,0 +1,12 @@
+<% provide(:title, "一覧") %>
+
+<%= link_to "投稿する", new_post_path %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.name %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate @posts %>
