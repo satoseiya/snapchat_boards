@@ -1,0 +1,10 @@
+<% provide(:title, "投稿") %>
+<%= form_for @post do |f| %>
+	<%= f.text_field :name, placeholder: "名前" %>
+	<%= f.text_field :description, placeholder: "本文" %>
+	<%= f.select :age, @ages %>
+	<%= f.select :sex, @sex %>
+	<%= f.select :prefecture, @prefectures %>
+	<%= f.text_field :snapchat_name, placeholder: "SnapChatネーム" %>
+	<%= f.submit %>
+<% end %>
