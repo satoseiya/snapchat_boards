@@ -3,6 +3,24 @@ class PostsController < ApplicationController
     @posts = Post.paginate(page: params[:page])
   end
 
+  def index_by_sex
+  	sex = params[:sex]
+  	@posts = Post.where(['sex LIKE ?', "%#{sex}%"]).paginate(page: params[:page]) if sex
+  	render :index
+  end
+
+  def index_by_age
+  	age = params[:age]
+  	@posts = Post.where(['age LIKE ?', "%#{age}%"]).paginate(page: params[:page]) if age
+  	render :index
+  end
+
+  def index_by_prefecture
+  	prefecture = params[:prefecture]
+  	@posts = Post.where(['prefecture LIKE ?', "%#{prefecture}%"]).paginate(page: params[:page]) if prefecture
+  	render :index
+  end
+
   # def show
   #   @post = Post.find(params[:id])
   # end
