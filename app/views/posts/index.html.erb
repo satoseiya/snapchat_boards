@@ -7,11 +7,11 @@
 
 <% @posts.each do |post| %>
   <div class="post">
-      <p class="post_name <%= post.sex == "男性" ? "man" : "woman" %>"><%= post.name %></p>
+      <p class="post_name <%= post.sex == "男性" ? "man" : "woman" %>"><%= post.name %>【<%= post.sex %>】</p>
       <p class="post_age_prefecture <%= post.sex == "男性" ? "man" : "woman" %>"><%= post.age %> / <%= post.prefecture %></p>
       <p><span style="font-size: 80%;">ユーザー名</span>  <%= post.snapchat_name %></p>
       <p><%= post.description %></p>
-      <div class="post_time"><%= post.created_at.strftime("%m-%d %H:%M") %></div>
+      <div class="post_time"><span class="post_id">投稿ID:<%= post.id %></span><%= post.created_at.strftime("%m-%d %H:%M") %></div>
   </div>
 <% end %>
 
