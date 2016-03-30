@@ -1,12 +1,18 @@
-<% provide(:title, "一覧") %>
+<% provide(:title, "投稿一覧") %>
 
-<%= link_to "投稿する", new_post_path %>
+<p class="center">ID友達検索掲示板</p>
+<p class="center">ID掲示板へようこそ</p>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.name %>
-    </li>
-  <% end %>
-</ul>
+<%= link_to "掲示板に投稿する☆*:.｡. o(≧▽≦)o .｡.:*☆", new_post_path, class: "btn btn-warning center-block post_btn" %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+      <p class="post_name <%= post.sex == "男性" ? "man" : "woman" %>"><%= post.name %></p>
+      <p class="post_age_prefecture <%= post.sex == "男性" ? "man" : "woman" %>"><%= post.age %> / <%= post.prefecture %></p>
+      <p><span style="font-size: 80%;">ユーザー名</span>  <%= post.snapchat_name %></p>
+      <p><%= post.description %></p>
+      <div class="post_time"><%= post.created_at.strftime("%m-%d %H:%M") %></div>
+  </div>
+<% end %>
+
 <%= will_paginate @posts %>

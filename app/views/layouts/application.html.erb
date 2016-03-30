@@ -5,26 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta  name="viewport" content="width=device-width">
 </head>
 <body>
-  <header>
-  	<%= link_to "SnapChat掲示板", root_path, id: "logo" %>
+  <header class="navbar navbar-fixed-top navbar-inverse header_color">
+    <div class="container logo">
+  	  <%= link_to "SnapChat掲示板", root_path, id: "logo" %>
+  	</div>
   </header>
   <div class="container">
     <%= yield %>
-    <footer class="footer">
-      <nav>
-        <ul>
+    <div class="container footer-link">
+        <ul class="list-inline center">
           <% ["男性","女性"].each do |sex| %>
             <li><%= link_to sex, index_by_sex_path(sex) %></li>
           <% end %>
         </ul>
-        <ul>
+        <ul class="list-inline center">
           <% ["10代","20代","30代","40代","50代以上"].each do |age| %>
             <li><%= link_to age, index_by_age_path(age) %></li>
           <% end %>
         </ul>
-        <ul>
+        <ul class="list-inline center">
           <% ['北海道', '青森県', '岩手県', '宮城県', '秋田県', 
     '山形県', '福島県', '茨城県', '栃木県', '群馬県', 
     '埼玉県', '千葉県', '東京都', '神奈川県', '新潟県', 
@@ -38,7 +40,11 @@
             <li><%= link_to prefecture, index_by_prefecture_path(prefecture) %></li>
           <% end %>
         </ul>
-      </nav>
+        <ul class="list-inline center">
+          <li><%= link_to "ホームへ戻る", root_path %></li>
+        </ul>
+     </div>
+      <footer class="footer">
       <nav>
         <ul>
           <li><%= link_to "使い方", help_path %></li>

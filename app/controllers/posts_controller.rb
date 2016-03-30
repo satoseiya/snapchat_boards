@@ -1,23 +1,23 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.paginate(page: params[:page])
+    @posts = Post.order("created_at DESC").paginate(page: params[:page])
   end
 
   def index_by_sex
   	sex = params[:sex]
-  	@posts = Post.where(['sex LIKE ?', "%#{sex}%"]).paginate(page: params[:page]) if sex
+  	@posts = Post.where(['sex LIKE ?', "%#{sex}%"]).order("created_at DESC").paginate(page: params[:page]) if sex
   	render :index
   end
 
   def index_by_age
   	age = params[:age]
-  	@posts = Post.where(['age LIKE ?', "%#{age}%"]).paginate(page: params[:page]) if age
+  	@posts = Post.where(['age LIKE ?', "%#{age}%"]).order("created_at DESC").paginate(page: params[:page]) if age
   	render :index
   end
 
   def index_by_prefecture
   	prefecture = params[:prefecture]
-  	@posts = Post.where(['prefecture LIKE ?', "%#{prefecture}%"]).paginate(page: params[:page]) if prefecture
+  	@posts = Post.where(['prefecture LIKE ?', "%#{prefecture}%"]).order("created_at DESC").paginate(page: params[:page]) if prefecture
   	render :index
   end
 
@@ -28,8 +28,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @ages = ["指定なし","10代","20代","30代","40代","50代以上"]
-    @sex = ["指定なし","男性","女性"]
-    @prefectures = ["指定なし",'北海道', '青森県', '岩手県', '宮城県', '秋田県', 
+    @sex = ["男性","女性"]
+    @prefectures = ["全国",'北海道', '青森県', '岩手県', '宮城県', '秋田県', 
     '山形県', '福島県', '茨城県', '栃木県', '群馬県', 
     '埼玉県', '千葉県', '東京都', '神奈川県', '新潟県', 
     '富山県', '石川県', '福井県', '山梨県', '長野県', 
