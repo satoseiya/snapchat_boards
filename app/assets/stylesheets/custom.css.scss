@@ -27,7 +27,16 @@ textarea {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: black;
+  color: white;
+  text-shadow:
+    black 1px 1px 0px,
+    black -1px 1px 0px,
+    black -1px -1px 0px,
+    black 1px -1px 0px,
+    black 1px 0px 0px,
+    black 0px 1px 0px,
+    black -1px 0px 0px,
+    black 0px -1px 0px;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -45,7 +54,7 @@ textarea {
 
 /* header */
 .header_color {
-	background-color: yellow; 
+	background-color: #FFFC00; 
 }
 
 /* footer */
@@ -101,7 +110,7 @@ footer ul li {
 .footer-link {
 	margin-top: 5%;
 	padding-top: 3%;
-	background-color: yellow;
+	background-color: #FFFC00;
 	margin-right: -15px;
 	margin-left: -15px;
 }
