@@ -7,4 +7,7 @@ class StaticPageController < ApplicationController
 
   def kiyaku
   end
+
+  def search
+  end
 end

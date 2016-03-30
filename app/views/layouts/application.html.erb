@@ -8,11 +8,27 @@
   <meta  name="viewport" content="width=device-width">
 </head>
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse header_color">
-    <div class="container logo">
-  	  <%= link_to "SnapChat掲示板", root_path, id: "logo" %>
-  	</div>
+  <header class="navbar navbar-fixed-bottom header_color header_height">
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-3 link_box">
+        <%= link_to "新着一覧", root_path %>
+      </div>
+      <div class="col-xs-3 link_box">
+        <%= link_to "新規投稿", new_post_path %>
+      </div>
+      <div class="col-xs-3 link_box">
+        <%= link_to "使い方", help_path %>
+      </div>
+      <div class="col-xs-3 link_box">
+        <%= link_to "検索", search_path %>
+      </div>
+      </div>
+    </div>
   </header>
+  <div class="container logo">
+      <%= link_to "SnapChat掲示板", root_path, id: "logo", class: "navbar navbar-fixed-top navbar-inverse logo_background_color navbar_static" %>
+    </div>
   <div class="container">
     <%= yield %>
     <div class="container footer-link">
@@ -26,7 +42,7 @@
             <li><%= link_to age, index_by_age_path(age) %></li>
           <% end %>
         </ul>
-        <ul class="list-inline center">
+        <ul class="list-inline center footer_prefecture">
           <% ['北海道', '青森県', '岩手県', '宮城県', '秋田県', 
     '山形県', '福島県', '茨城県', '栃木県', '群馬県', 
     '埼玉県', '千葉県', '東京都', '神奈川県', '新潟県', 

@@ -1,23 +1,23 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order("created_at DESC").paginate(page: params[:page])
+    @posts = Post.order("created_at DESC").paginate(page: params[:page], per_page: 5)
   end
 
   def index_by_sex
   	sex = params[:sex]
-  	@posts = Post.where(['sex LIKE ?', "%#{sex}%"]).order("created_at DESC").paginate(page: params[:page]) if sex
+  	@posts = Post.where(['sex LIKE ?', "%#{sex}%"]).order("created_at DESC").paginate(page: params[:page], per_page: 5) if sex
   	render :index
   end
 
   def index_by_age
   	age = params[:age]
-  	@posts = Post.where(['age LIKE ?', "%#{age}%"]).order("created_at DESC").paginate(page: params[:page]) if age
+  	@posts = Post.where(['age LIKE ?', "%#{age}%"]).order("created_at DESC").paginate(page: params[:page], per_page: 5) if age
   	render :index
   end
 
   def index_by_prefecture
   	prefecture = params[:prefecture]
-  	@posts = Post.where(['prefecture LIKE ?', "%#{prefecture}%"]).order("created_at DESC").paginate(page: params[:page]) if prefecture
+  	@posts = Post.where(['prefecture LIKE ?', "%#{prefecture}%"]).order("created_at DESC").paginate(page: params[:page], per_page: 5) if prefecture
   	render :index
   end
 
