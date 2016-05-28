@@ -2,10 +2,10 @@
 <html>
 <head>
   <title><%= yield(:title) %> | スナップチャット掲示板</title>
+  <%= render :partial => "layouts/meta_tags" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta  name="viewport" content="width=device-width">
 </head>
 <body>
   <header class="navbar navbar-fixed-bottom header_color header_height">
