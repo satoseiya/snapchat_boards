@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'sex/:sex', to: 'posts#index_by_sex', as: 'index_by_sex'
   get 'age/:age', to: 'posts#index_by_age', as: 'index_by_age'
   get 'prefecture/:prefecture', to: 'posts#index_by_prefecture', as: 'index_by_prefecture'
-  get 'sitemap', to: redirect('https://s3.amazonaws.com/snapchatboardsbucket/sitemaps/sitemap.xml.gz')
+  get 'sitemap', to: redirect('https://snapchatboardsbucket.s3.amazonaws.com/sitemaps/sitemap.xml.gz')
 end
