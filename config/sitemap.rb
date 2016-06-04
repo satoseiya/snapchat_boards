@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://immense-coast-47764.herokuapp.com/"
-SitemapGenerator::Sitemap.sitemaps_host = 'https://s3.amazonaws.com/snapchatboardsbucket/'
+SitemapGenerator::Sitemap.sitemaps_host = 'https://snapchatboardsbucket.s3.amazonaws.com/'
 SitemapGenerator::Sitemap.public_path   = 'public/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
